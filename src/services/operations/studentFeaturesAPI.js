@@ -5,6 +5,7 @@ import { resetCart } from "../../slices/cartSlice"
 import { setPaymentLoading } from "../../slices/courseSlice"
 import { apiConnector } from "../apiConnector"
 import { studentEndpoints } from "../apis"
+const API_KEY = process.env.REACT_APP_KEY
 
 const {
   COURSE_PAYMENT_API,
@@ -65,12 +66,13 @@ export async function BuyCourse(
     console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse.data)
 
     // Opening the Razorpay SDK
+    console.log("api is ", API_KEY);
     const options = {
-      key: process.env.RAZORPAY_KEY,
+      key: API_KEY,
       currency: orderResponse.data.data.currency,
       amount: `${orderResponse.data.data.amount}`,
       order_id: orderResponse.data.data.id,
-      name: "StudyNotion",
+      name: "StudyNotionthee",
       description: "Thank you for Purchasing the Course.",
       image: rzpLogo,
       prefill: {
