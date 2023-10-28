@@ -66,7 +66,7 @@ export async function BuyCourse(
     console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse.data)
 
     // Opening the Razorpay SDK
-    console.log("api is ", API_KEY);
+    // console.log("api is ", API_KEY);
     const options = {
       key: API_KEY,
       currency: orderResponse.data.data.currency,
