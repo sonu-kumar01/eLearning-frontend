@@ -49,7 +49,7 @@ export const fetchCourseDetails = async (courseId) => {
     const response = await apiConnector("POST", COURSE_DETAILS_API, {
       courseId,
     })
-    console.log("COURSE_DETAILS_API API RESPONSE............", response)
+    // console.log("COURSE_DETAILS_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
@@ -320,7 +320,7 @@ export const getFullDetailsOfCourse = async (courseId, token) => {
         Authorization: `Bearer ${token}`,
       }
     )
-    console.log("COURSE_FULL_DETAILS_API API RESPONSE............", response)
+    // console.log("COURSE_FULL_DETAILS_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
@@ -372,7 +372,7 @@ export const createRating = async (data, token) => {
     const response = await apiConnector("POST", CREATE_RATING_API, data, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("CREATE RATING API RESPONSE............", response)
+    // console.log("CREATE RATING API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Create Rating")
     }
